@@ -41,7 +41,6 @@ Please follow the below instructions to run this project in your computer:
    ```sh
    yarn
    ```
-4. Your app should be available in http://localhost:5500
 
 <!-- Editor Setup -->
 

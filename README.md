@@ -1,70 +1,210 @@
-# Getting Started with Create React App
+[![Youtube][youtube-shield]][youtube-url]
+[![Facebook-Page][facebook-shield]][facebook-url]
+[![Facebook-Group][facebook-shield]][facebook-group-url]
+[![Instagram][instagram-shield]][instagram-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT Title -->
+<br />
+<p align="center">
+  <h3 align="center"><a href="https://github.com/learnwithsumit/think-in-a-react-way">Lesson 3 - Think in a React way Tutorial Series [ in Bangla ]</a></h3>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [How to run](#how-to-run)
+- [Editor Setup](#editor-setup)
+  - [Plugins](#plugins)
+  - [Settings](#settings)
+  - [Set Line Breaks](#set-line-breaks)
+- [Linting Setup](#linting-setup)
+  - [Install Dev Dependencies](#install-dev-dependencies)
+  - [Create Linting Configuration file manually](#create-linting-configuration-file-manually)
+- [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- HOW TO RUN -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to run
 
-### `npm test`
+Please follow the below instructions to run this project in your computer:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone this repository
+   ```sh
+   git clone https://github.com/learnwithsumit/think-in-a-react-way.git
+   ```
+2. Checkout to branch "lesson-3"
+   ```sh
+   git checkout lesson-3
+   ```
+3. Run
+   ```sh
+   yarn
+   ```
+4. Your app should be available in http://localhost:5500
 
-### `npm run build`
+<!-- Editor Setup -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Editor Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can use any editor but as I personally prefer VS Code. I will give some instructions about how I prefer VS code to be setup for React applications.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Plugins
 
-### `npm run eject`
+You need to install the below plugins:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ESLint by Dirk Baeumer
+- Prettier - Code formatter by Prettier
+- Dracula Official Theme (optional)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Settings
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow the below settings for VS Code -
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Create a new folder called ".vscode" inside the project root folder
+2. Create a new file called "settings.json" inside that folder.
+3. Paste the below json in the newly created settings.json file and save the file.
 
-## Learn More
+```json
+{
+  // Theme
+  "workbench.colorTheme": "Dracula",
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  // config related to code formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "javascript.validate.enable": false, //disable all built-in syntax checking
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.alwaysShowStatus": true,
+  // emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you followed all previous steps, the theme should change and your editor should be ready.
 
-### Code Splitting
+### Set Line Breaks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Make sure in your VS Code Editor, "LF" is selected as line feed instead of CRLF (Carriage return and line feed). To do that, just click LF/CRLF in bottom right corner of editor, click it and change it to "LF". If you dont do that, you will get errors in my setup.
 
-### Analyzing the Bundle Size
+<img src="public/line-feed.jpg" alt="Line Feed" width="700">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Linting Setup
 
-### Making a Progressive Web App
+In order to lint and format your React project automatically according to popular airbnb style guide, I recommend you to follow the instructions below.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Install Dev Dependencies
 
-### Advanced Configuration
+```sh
+yarn add -D prettier
+yarn add -D babel-eslint
+npx install-peerdeps --dev eslint-config-airbnb
+yarn add -D eslint-config-prettier eslint-plugin-prettier
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+or You can also add a new script in the scripts section like below to install everything with a single command:
 
-### Deployment
+```json
+scripts: {
+    "lint": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+and then simply run the below command in the terminal -
 
-### `npm run build` fails to minify
+```sh
+yarn lint #or 'npm run lint'
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Create Linting Configuration file manually
+
+Create a `.eslintrc` file in the project root and enter the below contents:
+
+```json
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "eslint:recommended",
+    "prettier",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "react/react-in-jsx-scope": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "no-console": 0,
+    "react/state-in-constructor": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 4,
+        "semi": true,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "plugins": ["prettier", "react", "react-hooks"]
+}
+```
+
+<!-- CONTACT -->
+
+## Contact
+
+Sumit Saha - [sumit@learnwithsumit.com](mailto:sumit@learnwithsumit.com)
+
+Project Link: [https://github.com/learnwithsumit/think-in-a-react-way](https://github.com/learnwithsumit/think-in-a-react-way)
+
+Youtube Playlist Link: [https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr](https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr)
+
+Youtube Channel: [https://youtube.com/LearnwithSumit](https://youtube.com/LearnwithSumit)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[youtube-shield]: https://img.shields.io/badge/-Youtube-black.svg?style=flat-square&logo=youtube&color=555&logoColor=white
+[youtube-url]: https://youtube.com/LearnwithSumit
+[facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&color=555&logoColor=white
+[facebook-url]: https://facebook.com/letslearnwithsumit
+[facebook-group-url]: https://facebook.com/groups/learnwithsumit
+[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&color=555&logoColor=white
+[instagram-url]: https://instagram.com/learnwithsumit
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/company/learnwithsumit

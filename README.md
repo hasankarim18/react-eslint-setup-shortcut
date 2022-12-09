@@ -121,8 +121,8 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier
 
 or 
 npm i prettier --save-d 
-npm i @babel/eslint-parser
-npx install-peerdeps --dev eslint-config-airbnb
+npm i @babel/eslint-parser --save-d
+npx install-peerdeps --save-d eslint-config-airbnb
 npm i eslint-config-prettier --save-d
 npm i eslint-plugin-prettier --save-d
 

@@ -68,7 +68,7 @@ Follow the below settings for VS Code -
 ```json
 {
   // Theme
-  "workbench.colorTheme": "Dracula",
+  // "workbench.colorTheme": "Dracula", // use your theme name
 
   // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -119,9 +119,9 @@ yarn add -D babel-eslint "instead use latest babel"
 npx install-peerdeps --dev eslint-config-airbnb
 yarn add -D eslint-config-prettier eslint-plugin-prettier
 
-or 
-npm i prettier --save-d 
-npm i @babel/eslint-parser --save-d
+or use this process it is easier // in general npm is easier than yarn.
+npm i prettier --save-d
+npm i @babel/eslint-parser --save-d  // in lws he uses babel-eslint which is not compatable
 npx install-peerdeps --dev eslint-config-airbnb
 npm i eslint-config-prettier --save-d
 npm i eslint-plugin-prettier --save-d
@@ -129,6 +129,8 @@ npm i eslint-plugin-prettier --save-d
 ```
 
 or You can also add a new script in the scripts section like below to install everything with a single command:
+
+For simplicity avoid it if want to use it first modify it and test it
 
 ```json
 scripts: {
@@ -144,7 +146,7 @@ yarn lint #or 'npm run lint'
 
 ### Create Linting Configuration file manually
 
-Create a `.eslintrc` file in the project root and enter the below contents:
+Create a `.eslintrc` or `.eslintrc.json` file in the project root and enter the below contents:
 
 ```json
 {
@@ -185,8 +187,8 @@ Create a `.eslintrc` file in the project root and enter the below contents:
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth":80,
-        "tabWidth": 2,
+        "printWidth": 80, // sometime print width was 100 it causes problem
+        "tabWidth": 2, // chage tab with and make it similar with your vs code
         "semi": true,
         "endOfLine": "auto"
       }
@@ -200,22 +202,6 @@ Create a `.eslintrc` file in the project root and enter the below contents:
 
 ## Contact
 
-Sumit Saha - [sumit@learnwithsumit.com](mailto:sumit@learnwithsumit.com)
-
-Project Link: [https://github.com/learnwithsumit/think-in-a-react-way](https://github.com/learnwithsumit/think-in-a-react-way)
-
-Youtube Playlist Link: [https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr](https://www.youtube.com/playlist?list=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr)
-
-Youtube Channel: [https://youtube.com/LearnwithSumit](https://youtube.com/LearnwithSumit)
+Hasan - [hallysust@gmail.com](mailto:hallysust@gmail.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-
-[youtube-shield]: https://img.shields.io/badge/-Youtube-black.svg?style=flat-square&logo=youtube&color=555&logoColor=white
-[youtube-url]: https://youtube.com/LearnwithSumit
-[facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&color=555&logoColor=white
-[facebook-url]: https://facebook.com/letslearnwithsumit
-[facebook-group-url]: https://facebook.com/groups/learnwithsumit
-[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&color=555&logoColor=white
-[instagram-url]: https://instagram.com/learnwithsumit
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/company/learnwithsumit

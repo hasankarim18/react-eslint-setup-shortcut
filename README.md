@@ -119,6 +119,7 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier
 SKIP_PREFLIGHT_CHECK=true
 #### then it will not create problem i hope
 
+## Alternative method
 or use this process it is easier // in general npm is easier than yarn.
 npm i prettier --save-d
 npm i @babel/eslint-parser --save-d  // in lws he uses babel-eslint which is not compatable
@@ -157,7 +158,7 @@ Create a `.eslintrc` or `.eslintrc.json` file in the project root and enter the 
     "prettier",
     "plugin:jsx-a11y/recommended"
   ],
-  "parser": "babel-eslint", // or "@babel/eslint-parser"
+  "parser": "babel-eslint", // or "@babel/eslint-parser for alternative method"
   "parserOptions": {
     "ecmaVersion": 8
   },

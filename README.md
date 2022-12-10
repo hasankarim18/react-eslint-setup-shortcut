@@ -111,12 +111,13 @@ In order to lint and format your React project automatically according to popula
 
 ```sh
 yarn add -D prettier or
-
-
-yarn add -D babel-eslint "instead use latest babel"
-
+yarn add -D babel-eslint  // this is different than react own eslint
 npx install-peerdeps --dev eslint-config-airbnb
 yarn add -D eslint-config-prettier eslint-plugin-prettier
+
+#### if you follow above you need to create .env file and write
+SKIP_PREFLIGHT_CHECK=true
+#### then it will not create problem i hope
 
 or use this process it is easier // in general npm is easier than yarn.
 npm i prettier --save-d
@@ -156,7 +157,7 @@ Create a `.eslintrc` or `.eslintrc.json` file in the project root and enter the 
     "prettier",
     "plugin:jsx-a11y/recommended"
   ],
-  "parser": "babel-eslint",
+  "parser": "babel-eslint", // or "@babel/eslint-parser"
   "parserOptions": {
     "ecmaVersion": 8
   },
